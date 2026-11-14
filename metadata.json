@@ -1,0 +1,6 @@
+{
+  "name": "Brochure2Campaign AI",
+  "description": "Turn printed brochures into verified digital campaigns.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

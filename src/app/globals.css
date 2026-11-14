@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-soft-strong: var(--danger-soft-strong);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-focus: var(--focus);
+  --color-disabled: var(--disabled);
+  --color-disabled-foreground: var(--disabled-foreground);
+  --color-auth-gradient-start: var(--auth-gradient-start);
+  --color-auth-gradient-end: var(--auth-gradient-end);
+  --color-auth-foreground: var(--auth-foreground);
+  --radius-sm: var(--radius-small);
+  --radius-md: var(--radius-medium);
+  --radius-lg: var(--radius-large);
+  --radius-xl: var(--radius-extra-large);
+  --radius-2xl: var(--radius-extra-extra-large);
+  --radius-3xl: var(--radius-hero);
+  --radius-control: var(--radius-medium);
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #0e121e;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --muted: #f7f8f9;
+  --muted-strong: #f2f2f4;
+  --muted-foreground: #53565e;
+  --subtle: #717379;
+  --border: #e0e2e7;
+  --primary: #dc1e35;
+  --primary-hover: #b42331;
+  --primary-strong: #b42331;
+  --primary-foreground: #ffffff;
+  --primary-soft: #ffeff1;
+  --danger: #b42331;
+  --danger-soft: #ffeff1;
+  --danger-soft-strong: #fbdde1;
+  --success: #166534;
+  --success-soft: #ecfdf3;
+  --info: #1f3584;
+  --info-soft: #eff3ff;
+  --warning: #8a4b0f;
+  --warning-soft: #fff7e6;
+  --brand: #26385e;
+  --brand-soft: #edeff5;
+  --focus: #1f3584;
+  --disabled: #f2f2f4;
+  --disabled-foreground: #53565e;
+  --auth-gradient-start: #26385e;
+  --auth-gradient-end: #1f3584;
+  --auth-foreground: #ffffff;
+  --radius-small: 0.375rem;
+  --radius-medium: 0.5rem;
+  --radius-control: 0.5rem;
+  --radius-large: 0.75rem;
+  --radius-extra-large: 1rem;
+  --radius-extra-extra-large: 1.25rem;
+  --radius-hero: 1.5rem;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0e121e;
+  --foreground: #f7f8f9;
+  --surface: #171b27;
+  --surface-raised: #1d2331;
+  --muted: #202532;
+  --muted-strong: #2c3343;
+  --muted-foreground: #c4c8d1;
+  --subtle: #a2a9b8;
+  --border: #343c4d;
+  --primary: #ff6073;
+  --primary-hover: #ff8392;
+  --primary-strong: #ff9aa5;
+  --primary-foreground: #161a22;
+  --primary-soft: #4a2530;
+  --danger: #ff9aa5;
+  --danger-soft: #4a2530;
+  --danger-soft-strong: #5a2d3a;
+  --success: #86efac;
+  --success-soft: #143524;
+  --info: #b7c9f1;
+  --info-soft: #252f47;
+  --warning: #ffd08a;
+  --warning-soft: #423018;
+  --brand: #b7c9f1;
+  --brand-soft: #252f47;
+  --focus: #93a8ff;
+  --disabled: #2c3343;
+  --disabled-foreground: #a2a9b8;
+  --auth-gradient-start: #171b27;
+  --auth-gradient-end: #252f47;
+  --auth-foreground: #ffffff;
+  --radius-small: 0.375rem;
+  --radius-medium: 0.5rem;
+  --radius-control: 0.5rem;
+  --radius-large: 0.75rem;
+  --radius-extra-large: 1rem;
+  --radius-extra-extra-large: 1.25rem;
+  --radius-hero: 1.5rem;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+::selection { background: var(--primary-soft); color: var(--foreground); }
+.scrollbar::-webkit-scrollbar { width: 6px; }
+.scrollbar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 8px; }
+.auth-scene {
+  background-color: var(--auth-gradient-start);
+  background-image:
+    linear-gradient(90deg, color-mix(in srgb, var(--auth-gradient-start) 38%, transparent) 0%, color-mix(in srgb, var(--auth-gradient-start) 30%, transparent) 48%, color-mix(in srgb, var(--auth-gradient-start) 72%, transparent) 100%),
+    url('/images/auth-campaign-hero-v2.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.auth-visual { background: transparent; }
